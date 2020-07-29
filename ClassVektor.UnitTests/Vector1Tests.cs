@@ -5,6 +5,9 @@ using Task2ClassVektor;
 
 namespace ClassVektor.UnitTests
 {
+    /// <summary>
+    /// Class Vector1Tests
+    /// </summary>
     [TestClass]
     public class Vector1Tests
     {
@@ -14,6 +17,9 @@ namespace ClassVektor.UnitTests
         Vector1 vectorOne = new Vector1(v1);
         Vector1 vectorTwo = new Vector1(v2);
 
+        /// <summary>
+        /// testing vector creation
+        /// </summary>
         [TestMethod]
         public void Vector1_VectorOneTwo_Exception()
         {
@@ -25,7 +31,9 @@ namespace ClassVektor.UnitTests
             Assert.IsNotNull(vectorTwo);
         }
 
-        // тест сложения
+        /// <summary>
+        /// Addition test
+        /// </summary>
         [TestMethod]
         public void OperPlus_VectorOneTwo_Result1()
         {
@@ -38,8 +46,10 @@ namespace ClassVektor.UnitTests
             result.Should().Equals(expected);         
         }
 
-      //  тест вычитания
-       [TestMethod]
+        /// <summary>
+        /// Subtraction test
+        /// </summary>
+        [TestMethod]
         public void OperSub_VectorOneTwo_Result()
         {
             // Arange
@@ -51,7 +61,9 @@ namespace ClassVektor.UnitTests
             result.Should().Equals(expected);
         }
 
-        // тест произведения вектора на число
+        /// <summary>
+        /// Test the product of a vector by a number
+        /// </summary>
         [TestMethod]
         public void OperMult_VectorOne_Result()
         {
@@ -65,7 +77,9 @@ namespace ClassVektor.UnitTests
             result.Should().Equals(expected);
         }
 
-        // тест сколярного произведения векторов
+        /// <summary>
+        /// vector cross product test
+        /// </summary>
         [TestMethod]
         public void DotProduct_VectorOneTwo_Result()
         {
@@ -77,7 +91,9 @@ namespace ClassVektor.UnitTests
             Assert.AreEqual(result, expected);
         }
 
-        // тест деления вектора на число
+        /// <summary>
+        /// Test for dividing a vector by a number
+        /// </summary>
         [TestMethod]
         public void OperDiv_VectorOne_Result()
         {
@@ -91,7 +107,9 @@ namespace ClassVektor.UnitTests
             result.Should().Equals(expected);
         }
 
-        // тест на равенство
+        /// <summary>
+        /// Equality test
+        /// </summary>
         [TestMethod]
         public void OperEqually_VectorOne_Result()
         {                   

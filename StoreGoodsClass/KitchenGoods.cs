@@ -4,26 +4,42 @@ using System.Text;
 
 namespace StoreGoodsClass
 {
+    /// <summary>
+    /// class KitchenGoods
+    /// </summary>
     public class KitchenGoods : StoreGoods
     {
-        public override int Id { get; set; }
-        public override string Category { get; set; }
-        public override string Title { get; set; }
-        public override double Price { get; set; }
+        private const int Kopeek = 100;
         /// <summary>
-        /// Пустой конструктор
+        /// Property Id
+        /// </summary>
+        public override int Id { get; set; }
+        /// <summary>
+        /// Property Category
+        /// </summary>
+        public override string Category { get; set; }
+        /// <summary>
+        /// Property Title
+        /// </summary>
+        public override string Title { get; set; }
+        /// <summary>
+        ///  Property Price
+        /// </summary>
+        public override decimal Price { get; set; }
+        /// <summary>
+        /// Empty constructor
         /// </summary>
         public KitchenGoods() : base()
         {
         }
         /// <summary>
-        /// Конструктор
+        /// Constructor KitchenGoods(int id, string category, string title, double price) : base(id, category, title, price)
         /// </summary>
         /// <param name="id"></param>
         /// <param name="category"></param>
         /// <param name="title"></param>
         /// <param name="price"></param>
-        public KitchenGoods(int id, string category, string title, double price) : base(id, category, title, price)
+        public KitchenGoods(int id, string category, string title, decimal price) : base(id, category, title, price)
         {
             Id = id;
             Category = category;
@@ -31,11 +47,75 @@ namespace StoreGoodsClass
             Price = price;
         }
         /// <summary>
-        /// Метод ToString(MobilePhones tov1, MobilePhones tov2)
+        /// Operator +(KitchenGoods tov1, KitchenGoods tov2)
         /// </summary>
         /// <param name="tov1"></param>
         /// <param name="tov2"></param>
-        /// <returns>Операция сложения двух одинаковых видов товаров</returns>
+        /// <returns>Returns the sum of two identical products</returns>
+        public static KitchenGoods operator +(KitchenGoods tov1, KitchenGoods tov2) 
+        {
+            return new KitchenGoods
+            {
+                Id = tov1.Id,
+                Category = tov1.Category,
+                Title = tov1.Title + "-" + tov2.Title,
+                Price = (tov1.Price + tov2.Price) / 2
+            };
+        }
+        /// <summary>
+        /// Operator KitchenGoods(MobilePhones tov1)
+        /// </summary>
+        /// <param name="tov1"></param>
+        public static explicit operator KitchenGoods(MobilePhones tov1) 
+        {
+            return new KitchenGoods
+            {
+                Id = tov1.Id,
+                Category = tov1.Category,
+                Title = tov1.Title,
+                Price = tov1.Price
+            };
+        }
+
+        /// <summary>
+        /// Operator KitchenGoods(ProductsForGarden tov1)
+        /// </summary>
+        /// <param name="tov1"></param>
+        public static explicit operator KitchenGoods(ProductsForGarden tov1)
+        {
+            return new KitchenGoods
+            {
+                Id = tov1.Id,
+                Category = tov1.Category,
+                Title = tov1.Title,
+                Price = tov1.Price
+            };
+        }
+
+        /// <summary>
+        /// Operator int(KitchenGoods tov1)
+        /// </summary>
+        /// <param name="tov1"></param>
+        public static explicit operator int(KitchenGoods tov1)
+        { 
+           return (int)tov1.Price * Kopeek;
+        }
+
+        /// <summary>
+        /// operator double(KitchenGoods tov1)
+        /// </summary>
+        /// <param name="tov1"></param>
+        public static explicit operator double(KitchenGoods tov1)
+        {
+          return (double)tov1.Price;
+        }
+
+        /// <summary>
+        /// Method ToString(KitchenGoods tov1, KitchenGoods tov2)
+        /// </summary>
+        /// <param name="tov1"></param>
+        /// <param name="tov2"></param>
+        /// <returns>The operation of adding two identical types of goods</returns>
         public static string ToString(KitchenGoods tov1, KitchenGoods tov2)
         {
             string str;
@@ -44,49 +124,12 @@ namespace StoreGoodsClass
             return str;
         }
         /// <summary>
-        /// Метод GetHashCode()
+        /// Method GetHashCode()
         /// </summary>
-        /// <returns>Возвращает HashCode объекта</returns>
+        /// <returns>Returns the HashCode of the object</returns>
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
-        }
-        /// <summary>
-        /// Метод BringingOneTypeToAnother(StoreGoods tov1, MobilePhones tov2)
-        /// </summary>
-        /// <param name="tov1"></param>
-        /// <param name="tov2"></param>
-        /// <returns>Приведения одного типа товара к другому </returns>
-        public static KitchenGoods BringingOneTypeToAnother(StoreGoods tov1, KitchenGoods tov2)
-        {
-            KitchenGoods tov3 = new KitchenGoods(tov2.Id, tov2.Category, tov2.Title, tov2.Price);
-            tov3.Title = tov1.Title;
-            return tov3;
-        }
-        /// <summary>
-        /// Метод CastTypeToInteger(StoreGoods tov1)
-        /// </summary>
-        /// <param name="tov1"></param>
-        /// <returns>Приведение типа товара к целочисленному (цена возвращается в копейках)</returns>
-        public static int CastTypeToInteger(StoreGoods tov1)
-        {
-            int price = 0;
-            int rubles = 0;
-            double pennies = 0.0;
-            rubles = ((int)tov1.Price);            
-            pennies = (tov1.Price - (double)rubles)*100;
-            pennies = Math.Round(pennies, 2);           
-            price = (int)(rubles * 100) + (int)pennies;
-            return price;
-        }
-        /// <summary>
-        /// CastTypeToDouble(StoreGoods tov1)
-        /// </summary>
-        /// <param name="tov1"></param>
-        /// <returns>Приведение к вещественному типу </returns>
-        public static double CastTypeToDouble(StoreGoods tov1)
-        {
-            return tov1.Price;
+            return HashCode.Combine(Id, Category, Title, Price);
         }
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 namespace StoreGoodsClass
 {
     /// <summary>
-    /// Class MobilePhones
+    /// Class ProductsForGarden
     /// </summary>
-    public class MobilePhones : StoreGoods
+    public class ProductsForGarden : StoreGoods
     {
         private const int Kopeek = 100;
         /// <summary>
@@ -23,54 +23,52 @@ namespace StoreGoodsClass
         /// </summary>
         public override string Title { get; set; }
         /// <summary>
-        /// Property Price
+        ///  Property Price
         /// </summary>
         public override decimal Price { get; set; }
         /// <summary>
         /// Empty constructor
         /// </summary>
-        public MobilePhones() : base()
+        public ProductsForGarden() : base()
         {
         }
         /// <summary>
-        /// Constructor MobilePhones(int id, string category, string title, double price) : base(id, category, title, price)
+        /// Constructor ProductsForGarden(int id, string category, string title, decimal price) : base(id, category, title, price)
         /// </summary>
         /// <param name="id"></param>
         /// <param name="category"></param>
         /// <param name="title"></param>
         /// <param name="price"></param>
-        public MobilePhones(int id, string category, string title, decimal price) : base(id, category, title, price)
+        public ProductsForGarden(int id, string category, string title, decimal price) : base(id, category, title, price)
         {
             Id = id;
             Category = category;
             Title = title;
             Price = price;
         }
-
         /// <summary>
-        /// Operator +(MobilePhones tov1, MobilePhones tov2)
+        /// Operator +(ProductsForGarden tov1, ProductsForGarden tov2)
         /// </summary>
         /// <param name="tov1"></param>
         /// <param name="tov2"></param>
         /// <returns>Returns the sum of two identical products</returns>
-        public static MobilePhones operator +(MobilePhones tov1, MobilePhones tov2)
+        public static ProductsForGarden operator +(ProductsForGarden tov1, ProductsForGarden tov2) 
         {
-            return new MobilePhones
+            return new ProductsForGarden
             {
                 Id = tov1.Id,
                 Category = tov1.Category,
                 Title = tov1.Title + "-" + tov2.Title,
                 Price = (tov1.Price + tov2.Price) / 2
-            };           
+            };
         }
-
         /// <summary>
-        /// Operator MobilePhones(KitchenGoods tov1)
+        ///  ProductsForGarden(MobilePhones tov1)
         /// </summary>
         /// <param name="tov1"></param>
-        public static explicit operator MobilePhones(KitchenGoods tov1)
+        public static explicit operator ProductsForGarden(MobilePhones tov1) 
         {
-            return new MobilePhones
+            return new ProductsForGarden
             {
                 Id = tov1.Id,
                 Category = tov1.Category,
@@ -80,12 +78,12 @@ namespace StoreGoodsClass
         }
 
         /// <summary>
-        ///  MobilePhones(ProductsForGarden tov1)
+        /// ProductsForGarden(KitchenGoods tov1)
         /// </summary>
         /// <param name="tov1"></param>
-        public static explicit operator MobilePhones(ProductsForGarden tov1) 
+        public static explicit operator ProductsForGarden(KitchenGoods tov1) 
         {
-            return new MobilePhones
+            return new ProductsForGarden
             {
                 Id = tov1.Id,
                 Category = tov1.Category,
@@ -95,39 +93,38 @@ namespace StoreGoodsClass
         }
 
         /// <summary>
-        /// Operator int(MobilePhones tov1)
+        /// Operator int(ProductsForGarden tov1)
         /// </summary>
         /// <param name="tov1"></param>
-        public static explicit operator int(MobilePhones tov1)
-        {
+        public static explicit operator int(ProductsForGarden tov1)
+        { 
            return (int)tov1.Price * Kopeek;
         }
 
         /// <summary>
-        /// Operator double(MobilePhones tov1)
+        /// Operator double(ProductsForGarden tov1)
         /// </summary>
         /// <param name="tov1"></param>
-        public static explicit operator double(MobilePhones tov1)
+        public static explicit operator double(ProductsForGarden tov1)
         {
-          return  (double)tov1.Price;
+            return (double)tov1.Price;
         }
 
         /// <summary>
-        /// Method ToString(MobilePhones tov1, MobilePhones tov2)
+        /// Method ToString(ProductsForGarden tov1, ProductsForGarden tov2)
         /// </summary>
         /// <param name="tov1"></param>
         /// <param name="tov2"></param>
         /// <returns>The operation of adding two identical types of goods</returns>
-        public static string ToString(MobilePhones tov1, MobilePhones tov2)
+        public static string ToString(ProductsForGarden tov1, ProductsForGarden tov2)
         {
             string str;
             str = "Сложения двух одинаковых видов товаров: " + tov1.Title + "-" + tov2.Title
                 + " Стоимость: " + (tov1.Price + tov2.Price) / 2;
             return str;
         }
-
         /// <summary>
-        /// Метод GetHashCode()
+        /// Method GetHashCode()
         /// </summary>
         /// <returns>Returns the HashCode of the object</returns>
         public override int GetHashCode()

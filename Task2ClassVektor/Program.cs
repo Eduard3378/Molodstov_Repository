@@ -2,8 +2,15 @@
 
 namespace Task2ClassVektor
 {
+    /// <summary>
+    /// Class Program
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Method Main(string[] args)
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Vector1 v1 = new Vector1(new double[] { 10.0, 9.0, 8.0 });
