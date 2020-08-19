@@ -4,18 +4,21 @@ using System.Text;
 
 namespace FiguresForTheBox
 {
+    /// <summary>
+    /// Abstract class FigureBuilder
+    /// </summary>
     public abstract class FigureBuilder
     {
         /// <summary>
-        /// Виртуальное войство Name
+        /// Virtual Property Name
         /// </summary>
         public virtual string Name { get; set; }
         /// <summary>
-        /// Виртуальное войство Color
+        /// Virtual Property Color
         /// </summary>
-        public virtual string Color { get; set; }   
+        public virtual string Color { get; set; }
         /// <summary>
-        /// Конструктор
+        /// Constructor FigureBuilder(string n, Color color)
         /// </summary>
         /// <param name="n"></param>
         /// <param name="color"></param>
@@ -25,7 +28,7 @@ namespace FiguresForTheBox
             Color = Convert.ToString(color);
         }
         /// <summary>
-        /// Конструктор
+        /// Constructor FigureBuilder(double[] thesize1, params double[] thesize2)
         /// </summary>
         /// <param name="thesize1"></param>
         /// <param name="thesize2"></param>
@@ -33,7 +36,7 @@ namespace FiguresForTheBox
         {
         }
         /// <summary>
-        /// Метод Create(params double[] v)
+        /// Method Create(params double[] v)
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>

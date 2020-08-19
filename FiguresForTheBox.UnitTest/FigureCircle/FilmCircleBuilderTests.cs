@@ -7,9 +7,15 @@ using FluentAssertions;
 
 namespace FiguresForTheBox.FigureCircle.Tests
 {
+    /// <summary>
+    /// Class FilmCircleBuilderTests
+    /// </summary>
     [TestClass()]
     public class FilmCircleBuilderTests
     {
+        /// <summary>
+        /// Method FilmCircleBuilder_Name_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void FilmCircleBuilder_Name_CreateObject()
         {
@@ -19,18 +25,22 @@ namespace FiguresForTheBox.FigureCircle.Tests
             // Assert            
             Assert.IsNotNull(circleFigure3);
         }
-
+        /// <summary>
+        /// Method FilmCircleBuilder_Color_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void FilmCircleBuilder_Color_CreateObject()
         {
             //Arange
             FigureBuilder circleBuilder3 = new FilmCircleBuilder("CircleFilm", Color.ImpToPoint);
             Figures circleFigure4 = circleBuilder3.Create(14.0);           
         }
-
+        /// <summary>
+        /// Method FilmCircleBuilder_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void FilmCircleBuilder_Thesize1_CreateObject()
         {
             //Arange
@@ -38,7 +48,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
             double[] thesize2 = { 6.0 };
             FilmCircleBuilder circleBuilder4 = new FilmCircleBuilder(thesize1, thesize2);          
         }
-
+        /// <summary>
+        /// Method Create_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void Create_Thesize1_CreateObject()
         {

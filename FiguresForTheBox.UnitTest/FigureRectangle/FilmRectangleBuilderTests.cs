@@ -7,9 +7,15 @@ using FluentAssertions;
 
 namespace FiguresForTheBox.FigureRectangle.Tests
 {
+    /// <summary>
+    /// Class FilmRectangleBuilderTests
+    /// </summary>
     [TestClass()]
     public class FilmRectangleBuilderTests
     {
+        /// <summary>
+        /// Method FilmRectangle_Name_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void FilmRectangle_Name_CreateObject()
         {
@@ -19,18 +25,22 @@ namespace FiguresForTheBox.FigureRectangle.Tests
             // Assert            
             Assert.IsNotNull(rectangleFigure3);
         }
-
+        /// <summary>
+        /// Method FilmRectangle_Color_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void FilmRectangle_Color_CreateObject()
         {
             //Arange
             FigureBuilder rectangleBuilder3 = new FilmRectangleBuilder("RectangleFilm", Color.ImpToPoint);
             Figures rectangleFigure4 = rectangleBuilder3.Create(14.0, 15.0);
         }
-
+        /// <summary>
+        /// Method FilmRectangle_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void FilmRectangle_Thesize1_CreateObject()
         {
             //Arange
@@ -38,7 +48,9 @@ namespace FiguresForTheBox.FigureRectangle.Tests
             double[] thesize2 = { 6.0, 8.0 };
             FilmRectangleBuilder rectangleBuilder4 = new FilmRectangleBuilder(thesize1, thesize2);
         }
-
+        /// <summary>
+        /// Method Create_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void Create_Thesize1_CreateObject()
         {

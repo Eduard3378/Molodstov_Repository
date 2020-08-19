@@ -7,9 +7,15 @@ using FluentAssertions;
 
 namespace FiguresForTheBox.FigureSquare.Tests
 {
+    /// <summary>
+    /// Class PaperSquareBuilderTests
+    /// </summary>
     [TestClass()]
     public class PaperSquareBuilderTests
     {
+        /// <summary>
+        /// Method PaperSquareBuilder_Name_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void PaperSquareBuilder_Name_CreateObject()
         {
@@ -19,9 +25,11 @@ namespace FiguresForTheBox.FigureSquare.Tests
             // Assert            
             Assert.IsNotNull(squareFigure3);
         }
-
+        /// <summary>
+        /// Method PaperSquareBuilder_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void PaperSquareBuilder_Thesize1_CreateObject()
         {
             //Arange            
@@ -30,7 +38,9 @@ namespace FiguresForTheBox.FigureSquare.Tests
             double[] thesize2 = { 9.0 };
             PaperSquareBuilder squareBuilder4 = new PaperSquareBuilder(thesize1, thesize2);
         }
-
+        /// <summary>
+        /// Method Create_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void Create_Thesize1_CreateObject()
         {

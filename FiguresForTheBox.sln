@@ -5,7 +5,15 @@ VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiguresForTheBox", "FiguresForTheBox\FiguresForTheBox.csproj", "{D49F9532-11B9-4885-BF02-B7516F924D81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiguresForTheBox.UnitTest", "FiguresForTheBox.UnitTest\FiguresForTheBox.UnitTest.csproj", "{69736594-C47A-4F45-B189-4A8802D1F06C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiguresForTheBox.UnitTest", "FiguresForTheBox.UnitTest\FiguresForTheBox.UnitTest.csproj", "{69736594-C47A-4F45-B189-4A8802D1F06C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FigureForTheBox.XUnitTest", "FigureForTheBox.XUnitTest\FigureForTheBox.XUnitTest.csproj", "{DABC0CB5-674B-4925-96C2-F3F4B233D425}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB21600F-AB47-4421-8ED5-E84FA093AC28}"
+	ProjectSection(SolutionItems) = preProject
+		FiguresForTheBox\bin\Debug\netcoreapp3.1\XmlFigure.xml = FiguresForTheBox\bin\Debug\netcoreapp3.1\XmlFigure.xml
+		FiguresForTheBox\bin\Debug\netcoreapp3.1\XmlFigure5.xml = FiguresForTheBox\bin\Debug\netcoreapp3.1\XmlFigure5.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,10 @@ Global
 		{69736594-C47A-4F45-B189-4A8802D1F06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69736594-C47A-4F45-B189-4A8802D1F06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69736594-C47A-4F45-B189-4A8802D1F06C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DABC0CB5-674B-4925-96C2-F3F4B233D425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DABC0CB5-674B-4925-96C2-F3F4B233D425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DABC0CB5-674B-4925-96C2-F3F4B233D425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DABC0CB5-674B-4925-96C2-F3F4B233D425}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

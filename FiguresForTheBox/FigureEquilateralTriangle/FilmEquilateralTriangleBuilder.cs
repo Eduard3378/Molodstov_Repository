@@ -4,18 +4,21 @@ using System.Text;
 
 namespace FiguresForTheBox.FigureEquilateralTriangle
 {
+    /// <summary>
+    /// Class FilmEquilateralTriangleBuilder
+    /// </summary>
     public class FilmEquilateralTriangleBuilder: FigureBuilder
     {
         /// <summary>
-        /// Свойство Name
+        /// Property Name
         /// </summary>
         public override string Name { get; set; }
         /// <summary>
-        /// Свойство Color
+        /// Property Color
         /// </summary>
         public override string Color { get; set; }
         /// <summary>
-        /// Конструктор
+        /// Constructor FilmEquilateralTriangleBuilder(string n, Color color) : base(n, color)
         /// </summary>
         /// <param name="n"></param>
         /// <param name="color"></param>
@@ -27,13 +30,13 @@ namespace FiguresForTheBox.FigureEquilateralTriangle
             }
             if (Color == null)
             {
-                throw new NullReferenceException("Цвет не задан");
+                throw new Exception("Цвет не задан");
             }
             Name = n;
             Color = Convert.ToString(color);
         }
         /// <summary>
-        /// Конструктор
+        /// Constructor FilmEquilateralTriangleBuilder(double[] thesize1, params double[] thesize2) : base(thesize1, thesize2)
         /// </summary>
         /// <param name="thesize1"></param>
         /// <param name="thesize2"></param>
@@ -56,7 +59,7 @@ namespace FiguresForTheBox.FigureEquilateralTriangle
             }
             if (radius1 == 0)
             {
-                throw new NullReferenceException("Фигуру 2 нельзя вырезать из фигуры 1");
+                throw new Exception("Фигуру 2 нельзя вырезать из фигуры 1");
             }
             side1 = TheSize[3];
             side2 = TheSize[4];
@@ -65,10 +68,10 @@ namespace FiguresForTheBox.FigureEquilateralTriangle
             Console.WriteLine("Вырезан равносторонний треугольник со сторонами " + side1 + " " + side2 + " " + side3);
         }
         /// <summary>
-        /// Метод Create(params double[] v)
+        /// Method Create(params double[] v)
         /// </summary>
         /// <param name="v"></param>
-        /// <returns>Создает экземпляр класса EquilateralTriangleFigure с параметрами радиус и цвет(фигура из пленки)</returns>
+        /// <returns>Instantiates the EquilateralTriangleFigure class with radius and color parameters (film shape)</returns>
         public override Figures Create(params double[] v)
         {
             return new EquilateralTriangleFigure(v, Color);

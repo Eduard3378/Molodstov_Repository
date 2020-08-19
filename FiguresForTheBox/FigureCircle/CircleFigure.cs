@@ -4,34 +4,37 @@ using System.Text;
 
 namespace FiguresForTheBox.FigureCircle
 {
+    /// <summary>
+    /// Class CircleFigure
+    /// </summary>
     public class CircleFigure : Figures
     {
         const double pi = 3.1415;
         /// <summary>
-        /// Свойство Width
+        /// Property Width
         /// </summary>
         override public double Width { get; set; }
         /// <summary>
-        /// Свойство Hight
+        /// Property Hight
         /// </summary>
         override public double Hight { get; set; }
 
         /// <summary>
-        /// Свойство Radius
+        /// Property Radius
         /// </summary>
         public double Radius
         {
             get; set;
         }
         /// <summary>
-        /// Свойство Color
+        /// Property Color
         /// </summary>
         override public string Color
         {
             get; set;
         }
         /// <summary>
-        /// Конструктор
+        /// Constructor CircleFigure(double[] v, string color)
         /// </summary>
         /// <param name="v"></param>
         /// <param name="color"></param>
@@ -41,9 +44,9 @@ namespace FiguresForTheBox.FigureCircle
             this.Color = color;
         }
         /// <summary>
-        /// Метод GetArea()
+        /// Method GetArea()
         /// </summary>
-        /// <returns>Возвращает площадь объекта</returns>
+        /// <returns>Returns the area of an object</returns>
         override public double GetArea()
         {
             if (Radius == 0)
@@ -53,19 +56,19 @@ namespace FiguresForTheBox.FigureCircle
             return (pi * Radius * Radius);
         }
         /// <summary>
-        /// Метод ToString()
+        /// Method ToString()
         /// </summary>
-        /// <returns>Возвращает строковое представление экземпляра класса</returns>
+        /// <returns>Returns a string representation of an instance of a class</returns>
         public override string ToString()
         {
             return "Окружность с площадью " + GetArea() + " и периметром " + GetPerimeter() + " цвет " + Color;
         }
         /// <summary>
-        /// Метод Equals1(Figures x, Figures y)
+        /// Method Equals1(Figures x, Figures y)
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        /// <returns>Сравнивает площадь экземиляр класса с площадью экземпляром другого класса</returns>
+        /// <returns>Compares the area of an instance of a class to the area of an instance of another class</returns>
         public static bool Equals1(Figures x, Figures y)
         {
             if (x.GetArea() == y.GetArea())
@@ -78,18 +81,18 @@ namespace FiguresForTheBox.FigureCircle
             }
         }
         /// <summary>
-        /// GetHashCode(CircleFigure obj)
+        /// Method GetHashCode(CircleFigure obj)
         /// </summary>
         /// <param name="obj"></param>
-        /// <returns>Возвращает HashCode объекта</returns>
+        /// <returns>Returns the HashCode of the object</returns>
         public static int GetHashCode(CircleFigure obj)
         {
             return obj.GetHashCode();            
         }
         /// <summary>
-        /// GetPerimeter()
+        /// Method GetPerimeter()
         /// </summary>
-        /// <returns>Возвращает периметр объекта</returns>
+        /// <returns>Returns the perimeter of the object</returns>
         override public double GetPerimeter()
         {
             return (2 * pi * Radius);

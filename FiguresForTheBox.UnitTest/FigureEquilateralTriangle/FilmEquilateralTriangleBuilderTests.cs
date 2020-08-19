@@ -7,9 +7,15 @@ using FluentAssertions;
 
 namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
 {
+    /// <summary>
+    /// Class FilmEquilateralTriangleBuilderTests
+    /// </summary>
     [TestClass()]
     public class FilmEquilateralTriangleBuilderTests
     {
+        /// <summary>
+        /// Method FilmEquilateralTriangle_Name_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void FilmEquilateralTriangle_Name_CreateObject()
         {
@@ -19,18 +25,22 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
             // Assert            
             Assert.IsNotNull(triangleFigure3);
         }
-
+        /// <summary>
+        /// Method FilmEquilateralTriangle_Color_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void FilmEquilateralTriangle_Color_CreateObject()
         {
             //Arange
             FigureBuilder triangleBuilder3 = new FilmEquilateralTriangleBuilder("EquilateralTriangleFilm", Color.ImpToPoint);
             Figures triangleFigure4 = triangleBuilder3.Create(14.0, 14.0, 14.0);
         }
-
+        /// <summary>
+        /// Method FilmEquilateralTriangle_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void FilmEquilateralTriangle_Thesize1_CreateObject()
         {
             //Arange
@@ -38,7 +48,9 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
             double[] thesize2 = { 6.0, 6.0, 6.0 };
             FilmEquilateralTriangleBuilder triangleBuilder4 = new FilmEquilateralTriangleBuilder(thesize1, thesize2);
         }
-
+        /// <summary>
+        /// Method Create_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void Create_Thesize1_CreateObject()
         {

@@ -4,18 +4,21 @@ using System.Text;
 
 namespace FiguresForTheBox.FigureRectangle
 {
+    /// <summary>
+    /// Class FilmRectangleBuilder
+    /// </summary>
     public class FilmRectangleBuilder : FigureBuilder
     {
         /// <summary>
-        /// Свойство Name
+        /// Property Name
         /// </summary>
         public override string Name { get; set; }
         /// <summary>
-        /// Свойство Color
+        /// Property Color
         /// </summary>
         public override string Color { get; set; }
         /// <summary>
-        /// Констрактор
+        /// Constructor FilmRectangleBuilder(string n, Color color) : base(n, color)
         /// </summary>
         /// <param name="n"></param>
         /// <param name="color"></param>
@@ -27,13 +30,13 @@ namespace FiguresForTheBox.FigureRectangle
             }
             if (Color == null)
             {
-                throw new NullReferenceException("Цвет не задан");
+                throw new Exception("Цвет не задан");
             }
             Name = n;
             Color = Convert.ToString(color);
         }
         /// <summary>
-        /// Конструктор
+        /// Constructor FilmRectangleBuilder(double[] thesize1, params double[] thesize2) : base(thesize1, thesize2)
         /// </summary>
         /// <param name="thesize1"></param>
         /// <param name="thesize2"></param>
@@ -55,17 +58,17 @@ namespace FiguresForTheBox.FigureRectangle
             }
             if (radius1 == 0)
             {
-                throw new NullReferenceException("Фигуру 2 нельзя вырезать из фигуры 1");
+                throw new Exception("Фигуру 2 нельзя вырезать из фигуры 1");
             }
             width = TheSize[2];
             hight = TheSize[3];
             Console.WriteLine("Вырезан прямоугольник с длиной " + width + " и шириной " + hight);
         }
         /// <summary>
-        /// Метод Create(params double[] v)
+        /// Method Create(params double[] v)
         /// </summary>
         /// <param name="v"></param>
-        /// <returns>Создает экземпляр класса RectangleFigure с параметрами радиус и цвет(фигура из пленки)</returns>
+        /// <returns>Creates an instance of the RectangleFigure class with radius and color parameters (film shape)</returns>
         public override Figures Create(params double[] v)
         {
             return new RectangleFigure(v, Color);

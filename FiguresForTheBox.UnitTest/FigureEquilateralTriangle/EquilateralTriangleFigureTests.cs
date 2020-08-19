@@ -6,6 +6,9 @@ using System.Text;
 
 namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
 {
+    /// <summary>
+    /// Class EquilateralTriangleFigureTests
+    /// </summary>
     [TestClass()]
     public class EquilateralTriangleFigureTests
     {
@@ -14,6 +17,9 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
 
         static FigureBuilder triangleBuilder1 = new PaperEquilateralTriangleBuilder("EquilateralTriangle", Color.Black);
         Figures triangleFigure2 = triangleBuilder1.Create(9.0, 9.0, 9.0);
+        /// <summary>
+        /// Method Create_ABC_CreateObject()
+        /// </summary>
         [TestMethod]
         public void Create_ABC_CreateObject()
         {
@@ -24,7 +30,9 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
             Assert.IsNotNull(triangleFigure2);
             Assert.IsNotNull(triangleFigure3);
         }
-
+        /// <summary>
+        /// Method EquilateralTriangleFigure_Radius_CreateObject()
+        /// </summary>
         [TestMethod]
         public void EquilateralTriangleFigure_Radius_CreateObject()
         {
@@ -34,7 +42,9 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
             // Assert
             Assert.IsNotNull(triangleFigure3);
         }
-
+        /// <summary>
+        /// Method GetArea_Radius_Exception()
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
         public void GetArea_Radius_Exception()
@@ -46,7 +56,9 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
             //Act
             var result = triangleFigure4.GetArea();
         }
-
+        /// <summary>
+        /// Method ToString_Line_Line()
+        /// </summary>
         [TestMethod]
         public void ToString_Line_Line()
         {
@@ -61,7 +73,9 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
             // Assert
             Assert.AreEqual(expected, result);
         }
-
+        /// <summary>
+        /// Method Equals1_EquilateralTriangleFigure_True()
+        /// </summary>
         [TestMethod]
         public void Equals1_EquilateralTriangleFigure_True()
         {
@@ -76,7 +90,9 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
             // Assert
             Assert.IsTrue(result);
         }
-
+        /// <summary>
+        /// Method EquilateralTriangleFigure_ABC_True()
+        /// </summary>
         [TestMethod]
         public void EquilateralTriangleFigure_ABC_True()
         {
@@ -122,7 +138,9 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
         //    // Assert
         //    Assert.IsTrue(result1);
         //}
-
+        /// <summary>
+        /// Method GetPerimeter_Radius_Result()
+        /// </summary>
         [TestMethod]
         public void GetPerimeter_Radius_Result()
         {

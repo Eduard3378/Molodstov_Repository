@@ -5,7 +5,7 @@ using System.Text;
 namespace FiguresForTheBox
 {
     /// <summary>
-    /// Перечисление Enum
+    /// Enum Color
     /// </summary>
     public enum Color
     {

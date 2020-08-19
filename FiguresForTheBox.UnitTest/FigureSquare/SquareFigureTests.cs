@@ -6,6 +6,9 @@ using System.Text;
 
 namespace FiguresForTheBox.FigureSquare.Tests
 {
+    /// <summary>
+    /// Class SquareFigureTests
+    /// </summary>
     [TestClass()]
     public class SquareFigureTests
     {
@@ -14,6 +17,9 @@ namespace FiguresForTheBox.FigureSquare.Tests
 
         static FigureBuilder squareBuilder1 = new PaperSquareBuilder("Square", Color.Black);
         Figures squareFigure2 = squareBuilder1.Create(13.0);
+        /// <summary>
+        /// Method Create_Side1_CreateObject()
+        /// </summary>
         [TestMethod]
         public void Create_Side1_CreateObject()
         {
@@ -24,7 +30,9 @@ namespace FiguresForTheBox.FigureSquare.Tests
             Assert.IsNotNull(squareFigure2);
             Assert.IsNotNull(squareFigure3);
         }
-
+        /// <summary>
+        /// Method SquareFigure_Side1_CreateObject()
+        /// </summary>
         [TestMethod]
         public void SquareFigure_Side1_CreateObject()
         {
@@ -34,7 +42,9 @@ namespace FiguresForTheBox.FigureSquare.Tests
             // Assert
             Assert.IsNotNull(squareFigure3);
         }
-
+        /// <summary>
+        /// Method GetArea_00_Exception()
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
         public void GetArea_00_Exception()
@@ -46,7 +56,9 @@ namespace FiguresForTheBox.FigureSquare.Tests
             //Act
             var result = squareFigure4.GetArea();
         }
-
+        /// <summary>
+        /// Method ToString_Line_Line()
+        /// </summary>
         [TestMethod]
         public void ToString_Line_Line()
         {
@@ -61,7 +73,9 @@ namespace FiguresForTheBox.FigureSquare.Tests
             // Assert
             Assert.AreEqual(expected, result);
         }
-
+        /// <summary>
+        /// Method Equals1_SquareFigure_True()
+        /// </summary>
         [TestMethod]
         public void Equals1_SquareFigure_True()
         {
@@ -76,7 +90,9 @@ namespace FiguresForTheBox.FigureSquare.Tests
             // Assert
             Assert.IsTrue(result);
         }
-
+        /// <summary>
+        /// Method SquareFigure_Side1_True()
+        /// </summary>
         [TestMethod]
         public void SquareFigure_Side1_True()
         {
@@ -121,7 +137,9 @@ namespace FiguresForTheBox.FigureSquare.Tests
         //    // Assert
         //    Assert.IsTrue(result1);
         //}
-
+        /// <summary>
+        /// Method GetPerimeter_Side1_Result()
+        /// </summary>
         [TestMethod]
         public void GetPerimeter_Side1_Result()
         {

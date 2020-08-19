@@ -4,18 +4,21 @@ using System.Text;
 
 namespace FiguresForTheBox.FigureCircle
 {
+    /// <summary>
+    /// Class FilmCircleBuilder
+    /// </summary>
     public class FilmCircleBuilder : FigureBuilder
     {
         /// <summary>
-        /// Свойство Name
+        /// Property Name
         /// </summary>
         public override string Name { get; set; }
         /// <summary>
-        /// Свойство Color
+        /// Property Color
         /// </summary>
         public override string Color { get; set; }
         /// <summary>
-        /// Конструктор
+        /// Constructor FilmCircleBuilder(string n, Color color) : base(n, color)
         /// </summary>
         /// <param name="n"></param>
         /// <param name="color"></param>
@@ -23,17 +26,17 @@ namespace FiguresForTheBox.FigureCircle
         {
             if (Color == "ImpToPoint")
             {
-                Color = null;
+                throw new Exception("Фигуры из пленки окрашивать нельзя");
             }
             if (Color == null)
             {
-                throw new NullReferenceException("Фигуры из пленки окрашивать нельзя");
+                throw new Exception("Фигуры из пленки окрашивать нельзя");
             }
             Name = n;
             Color = Convert.ToString(color);
         }
         /// <summary>
-        /// Конструктор
+        /// Constructor FilmCircleBuilder(double[] thesize1, params double[] thesize2) : base(thesize1, thesize2)
         /// </summary>
         /// <param name="thesize1"></param>
         /// <param name="thesize2"></param>
@@ -50,16 +53,16 @@ namespace FiguresForTheBox.FigureCircle
             }
             if (radius1 == 0)
             {
-                throw new NullReferenceException("Фигуру 2 нельзя вырезать из фигуры 1");
+                throw new Exception("Фигуру 2 нельзя вырезать из фигуры 1");
             }
             radius = TheSize[1];
             Console.WriteLine("Вырезана окружность с радиусом " + radius);
         }
         /// <summary>
-        /// Метод Create(params double[] v)
+        /// Method Create(params double[] v)
         /// </summary>
         /// <param name="v"></param>
-        /// <returns>Создает экземпляр класса CircleFigure с параметрами радиус и цвет(фигура из пленки)</returns>
+        /// <returns>Creates an instance of the CircleFigure class with a radius and a color (film shape)</returns>
         public override Figures Create(params double[] v)
         {
             return new CircleFigure(v, this.Color);

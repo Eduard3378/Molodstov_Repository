@@ -7,9 +7,15 @@ using FluentAssertions;
 
 namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
 {
+    /// <summary>
+    /// Class PaperEquilateralTriangleBuilderTests
+    /// </summary>
     [TestClass()]
     public class PaperEquilateralTriangleBuilderTests
     {
+        /// <summary>
+        /// Method PaperEquilateralTriangleBuilder_Name_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void PaperEquilateralTriangleBuilder_Name_CreateObject()
         {
@@ -19,17 +25,21 @@ namespace FiguresForTheBox.FigureEquilateralTriangle.Tests
             // Assert            
             Assert.IsNotNull(triangleFigure3);
         }
-
+        /// <summary>
+        /// Method PaperEquilateralTriangleBuilder_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void PaperEquilateralTriangleBuilder_Thesize1_CreateObject()
         {
-            //Arange            
-
+            //Arange
             double[] thesize1 = { 7.0, 7.0, 7.0 };
             double[] thesize2 = { 9.0, 9.0, 9.0 };
             PaperEquilateralTriangleBuilder triangleBuilder4 = new PaperEquilateralTriangleBuilder(thesize1, thesize2);
         }
+        /// <summary>
+        /// Method Create_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void Create_Thesize1_CreateObject()
         {

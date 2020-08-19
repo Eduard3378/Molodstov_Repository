@@ -6,6 +6,9 @@ using System.Text;
 
 namespace FiguresForTheBox.FigureCircle.Tests
 {
+    /// <summary>
+    /// Class CircleFigureTests
+    /// </summary>
     [TestClass()]
     public class CircleFigureTests
     {
@@ -14,6 +17,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
 
         static FigureBuilder circleBuilder1 = new PaperCircleBuilder("Circle", Color.Black);
         Figures circleFigure2 = circleBuilder1.Create(9.0);
+        /// <summary>
+        /// Method Create_Radius_CreateObject()
+        /// </summary>
         [TestMethod]
         public void Create_Radius_CreateObject()
         {
@@ -24,7 +30,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
             Assert.IsNotNull(circleFigure2);
             Assert.IsNotNull(circleFigure3);
         }
-
+        /// <summary>
+        /// Method CircleFigure_Radius_CreateObject()
+        /// </summary>
         [TestMethod]
         public void CircleFigure_Radius_CreateObject()
         {
@@ -35,7 +43,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
             // Assert
             Assert.IsNotNull(circleFigure3);
         }
-
+        /// <summary>
+        /// Method GetArea_Radius_Exception()
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
         public void GetArea_Radius_Exception()
@@ -47,7 +57,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
             //Act
             var result = circleFigure4.GetArea();
         }
-
+        /// <summary>
+        /// Method ToString_Line_Line()
+        /// </summary>
         [TestMethod]
         public void ToString_Line_Line()
         {
@@ -62,7 +74,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
             // Assert
             Assert.AreEqual(expected, result);
         }
-
+        /// <summary>
+        /// Method Equals1_CircleFigure_True()
+        /// </summary>
         [TestMethod]
         public void Equals1_CircleFigure_True()
         {
@@ -77,7 +91,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
             // Assert
             Assert.IsTrue(result);
         }
-
+        /// <summary>
+        /// Method CircleFigure_Radius_True()
+        /// </summary>
         [TestMethod]
         public void CircleFigure_Radius_True()
         {
@@ -121,7 +137,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
         //    // Assert
         //    Assert.IsTrue(result1);
         //}
-
+        /// <summary>
+        /// Method GetPerimeter_Radius_Result()
+        /// </summary>
         [TestMethod]
         public void GetPerimeter_Radius_Result()
         {

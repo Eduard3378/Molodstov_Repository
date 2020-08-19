@@ -6,6 +6,9 @@ using System.Text;
 
 namespace FiguresForTheBox.FigureRectangle.Tests
 {
+    /// <summary>
+    /// Class RectangleFigureTests
+    /// </summary>
     [TestClass()]
     public class RectangleFigureTests
     {
@@ -14,6 +17,9 @@ namespace FiguresForTheBox.FigureRectangle.Tests
 
         static FigureBuilder rectangleBuilder1 = new PaperRectangleBuilder("Rectangle", Color.Black);
         Figures rectangleFigure2 = rectangleBuilder1.Create(13.0, 15.0);
+        /// <summary>
+        /// Method Create_WidthHight_CreateObject()
+        /// </summary>
         [TestMethod]
         public void Create_WidthHight_CreateObject()
         {
@@ -24,7 +30,9 @@ namespace FiguresForTheBox.FigureRectangle.Tests
             Assert.IsNotNull(rectangleFigure2);
             Assert.IsNotNull(rectangleFigure3);
         }
-
+        /// <summary>
+        /// Method RectangleFigure_WidthHight_CreateObject()
+        /// </summary>
         [TestMethod]
         public void RectangleFigure_WidthHight_CreateObject()
         {
@@ -34,7 +42,9 @@ namespace FiguresForTheBox.FigureRectangle.Tests
             // Assert
             Assert.IsNotNull(rectangleFigure3);
         }
-
+        /// <summary>
+        /// Method GetArea_00_Exception()
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
         public void GetArea_00_Exception()
@@ -46,7 +56,9 @@ namespace FiguresForTheBox.FigureRectangle.Tests
             //Act
             var result = rectangleFigure4.GetArea();
         }
-
+        /// <summary>
+        /// Method ToString_Line_Line()
+        /// </summary>
         [TestMethod]
         public void ToString_Line_Line()
         {
@@ -61,7 +73,9 @@ namespace FiguresForTheBox.FigureRectangle.Tests
             // Assert
             Assert.AreEqual(expected, result);
         }
-
+        /// <summary>
+        /// Method Equals1_RectangleFigure_True()
+        /// </summary>
         [TestMethod]
         public void Equals1_RectangleFigure_True()
         {
@@ -76,7 +90,9 @@ namespace FiguresForTheBox.FigureRectangle.Tests
             // Assert
             Assert.IsTrue(result);
         }
-
+        /// <summary>
+        /// Method RectangleFigure_WidthHight_True()
+        /// </summary>
         [TestMethod]
         public void RectangleFigure_WidthHight_True()
         {
@@ -122,7 +138,9 @@ namespace FiguresForTheBox.FigureRectangle.Tests
         //    // Assert
         //    Assert.IsTrue(result1);
         //}
-
+        /// <summary>
+        /// Method GetPerimeter_WidthHight_Result()
+        /// </summary>
         [TestMethod]
         public void GetPerimeter_WidthHight_Result()
         {
@@ -133,6 +151,5 @@ namespace FiguresForTheBox.FigureRectangle.Tests
             // Assert
             Assert.AreEqual(result, expected);
         }
-
     }
 }

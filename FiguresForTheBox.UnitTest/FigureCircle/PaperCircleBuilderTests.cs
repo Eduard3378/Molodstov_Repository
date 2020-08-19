@@ -7,9 +7,15 @@ using FluentAssertions;
 
 namespace FiguresForTheBox.FigureCircle.Tests
 {
+    /// <summary>
+    /// Class PaperCircleBuilderTests
+    /// </summary>
     [TestClass()]
     public class PaperCircleBuilderTests
     {
+        /// <summary>
+        /// Method PaperCircleBuilder_Name_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void PaperCircleBuilder_Name_CreateObject()
         {
@@ -19,9 +25,11 @@ namespace FiguresForTheBox.FigureCircle.Tests
             // Assert            
             Assert.IsNotNull(circleFigure3);
         }
-
+        /// <summary>
+        /// Method PaperCircleBuilder_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(Exception))]
         public void PaperCircleBuilder_Thesize1_CreateObject()
         {
             //Arange
@@ -29,6 +37,9 @@ namespace FiguresForTheBox.FigureCircle.Tests
             double[] thesize2 = { 9.0 };
             PaperCircleBuilder circleBuilder4 = new PaperCircleBuilder(thesize1, thesize2);
         }
+        /// <summary>
+        /// Method Create_Thesize1_CreateObject()
+        /// </summary>
         [TestMethod()]
         public void Create_Thesize1_CreateObject()
         {
